@@ -62,7 +62,7 @@ const updateEvent = async(req, res = response) => {
       user: uid
     }
 
-    const eventUpdated = await Event.deleteOne(eventId, newEvent, { new: true });
+    const eventUpdated = await Event.findByIdAndUpdate(eventId, newEvent, { new: true });
 
     res.json({
       ok: true,
